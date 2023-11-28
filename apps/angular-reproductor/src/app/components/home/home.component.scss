@@ -1,0 +1,61 @@
+:host {
+  text-align: center;
+}
+
+nz-header,
+nz-footer {
+  backdrop-filter: blur(5px);
+  color: #fff;
+}
+
+nz-header {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-top-right-radius: 20px;
+}
+
+nz-footer {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-bottom-right-radius: 20px;
+  line-height: 1.5;
+}
+
+nz-sider {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  backdrop-filter: blur(5px);
+  color: #fff;
+  line-height: 120px;
+  height: 95vh;
+}
+
+nz-content {
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.3) 100%);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  min-height: 120px;
+  line-height: 120px;
+  max-height: 79vh;
+  overflow-y: scroll;
+}
+
+::ng-deep .ant-layout-sider-trigger {
+  border-bottom-left-radius: 20px !important;
+}
+
+.container-player{
+  height: 100%;
+}
+
+
+nz-layout {
+  margin-bottom: 48px;
+  background-color: transparent;
+}
+
+nz-layout nz-layout,
+nz-layout:last-child {
+  margin: 0;
+}
+

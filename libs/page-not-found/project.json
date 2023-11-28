@@ -1,0 +1,27 @@
+{
+  "name": "page-not-found",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/page-not-found/src",
+  "prefix": "quipux-challenge",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/page-not-found/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/page-not-found/**/*.ts",
+          "libs/page-not-found/**/*.html"
+        ]
+      }
+    }
+  }
+}

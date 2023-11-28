@@ -1,0 +1,26 @@
+<h1>{{details.nombreLista}}</h1>
+<p>{{details.descripcion}}</p>
+@if(details && details.songs){
+<nz-table #basicTable [nzData]="details.songs">
+<thead>
+<tr>
+<th>Titulo</th>
+<th>Artista</th>
+<th>Album</th>
+<th>Genero</th>
+<th>Año</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let data of basicTable.data">
+<td>{{ data.titulo | upperpipe}}</td>
+<td>{{ data.artista }}</td>
+<td>{{ data.album }}</td>
+<td>{{ data.genero }}</td>
+<td>{{ data.anno }}</td>
+
+</tr>
+</tbody>
+</nz-table>
+}
+

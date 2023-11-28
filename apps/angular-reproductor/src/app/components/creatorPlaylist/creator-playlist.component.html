@@ -1,0 +1,99 @@
+<div>
+  @if(stepCurrent.step < 2){
+  <h1>Crear playlist</h1>
+<nz-steps [nzCurrent]="stepCurrent.step" >
+  <nz-step nzTitle="Nombre" [nzStatus]="stepCurrent.step > 0 ? 'finish' : (stepCurrent.step === 0 ? 'process' : 'wait')"></nz-step>
+  <nz-step nzTitle="Canciones" [nzStatus]="stepCurrent.step > 1 ? 'finish' : (stepCurrent.step === 1 ? 'process' : 'wait')"></nz-step>
+</nz-steps>
+  }
+
+      @if(stepCurrent.step == 0){
+  <div nz-row class="text-center mt-4">
+    <div nz-col nzSpan="24">
+      <form nz-form [formGroup]="validateFormCreate" class="login-form" (ngSubmit)="submitForm()">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Por favor ingrese un nombre para su playlist">
+            <nz-input-group>
+              <input type="text" nz-input formControlName="nombre" placeholder="Nombre"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Por favor ingrese una descripcion para su playlist">
+            <nz-input-group>
+              <input type="text" nz-input formControlName="descripcion" placeholder="Descripcion"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Siguiente</button>
+      </form>
+          </div>
+
+  </div>
+      }
+      <div nz-row class="text-center mt-4">
+        @if(stepCurrent.step == 1){
+        <div nz-col nzSpan="12" style="padding-right: 5px">
+          <form nz-form [formGroup]="validateFormCreateSongs" class="login-form">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Por favor ingrese un titulo para su cancion">
+                <nz-input-group>
+                  <input type="text" nz-input formControlName="titulo" placeholder="titulo"/>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Por favor ingrese un artista para su cancion">
+                <nz-input-group>
+                  <input type="text" nz-input formControlName="artista" placeholder="artista"/>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Por favor ingrese un album para su cancion">
+                <nz-input-group>
+                  <input type="text" nz-input formControlName="album" placeholder="album"/>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Por favor ingrese un año para su cancion">
+                <nz-input-group>
+                  <input type="text" nz-input formControlName="anno" placeholder="anno"/>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Por favor ingrese un genero para su cancion">
+                <nz-input-group>
+                  <input type="text" nz-input formControlName="genero" placeholder="genero"/>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" (click)="submitForm2()">Siguiente</button>
+          </form>
+        </div>
+        <div nz-col nzSpan="12" style="padding-left: 5px">
+          <nz-list nzBordered nzSize="small" style="background: white;">
+            <nz-list-header>Canciones agregadas</nz-list-header>
+            <nz-list-item *ngFor="let cancion of requestPlaylist.canciones">{{cancion.titulo}}</nz-list-item>
+          </nz-list>
+           <button nz-button class="login-form-button login-form-margin" (click)="savePlaylist()" [nzType]="'primary'">Guardar</button>
+        </div>
+        }
+      </div>
+      @if(stepCurrent.step == 2){
+      <div nz-row class="text-center">
+       <div nz-col nzSpan="24">
+       <h1>Bien Hecho!</h1>
+       </div>
+        <div nz-col nzSpan="24">
+        <p>Tu playlist ha sido guardada</p>
+        </div>
+        <img src="./assets/images/music-animate.svg" alt="Logo de mi empresa" width=300px height="300px">
+      </div>
+      }
+
+</div>
+
+

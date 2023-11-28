@@ -1,0 +1,24 @@
+<div nz-row>
+  <div nz-col nzSpan="24" class="center-card text-center">
+    <nz-card class="card-frost" style="width:300px;" nzTitle="Bienvenido!">
+      <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Por favor ingrese su nombre de usuario!">
+            <nz-input-group nzPrefixIcon="user">
+              <input type="text" nz-input formControlName="userName" placeholder="Nombre de usuario"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Por favor ingrese su contraseña!">
+            <nz-input-group nzPrefixIcon="lock">
+              <input type="password" nz-input formControlName="password" placeholder="Contraseña"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Ingresar</button>
+        <a>Registrarse ahora!</a>
+      </form>
+    </nz-card>
+  </div>
+</div>

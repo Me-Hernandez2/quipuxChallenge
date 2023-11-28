@@ -1,0 +1,32 @@
+<nz-layout>
+  <nz-sider nzCollapsible>
+    <div class="logo">
+      <nz-avatar [nzSize]="60" nzIcon="user"  nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+    </div>
+    <quipux-challenge-playlist (seeDetails)="getDetails($event)"></quipux-challenge-playlist>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+    <li nz-menu-item (click)="createPlaylist = !createPlaylist">
+      <span nz-icon nzType="plus-circle"></span>
+      <span>Agregar Playlist</span>
+    </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <h1>Reproductor Musical</h1>
+    </nz-header>
+    <nz-content>
+      <div nz-row class="container-player" style="margin: 3em">
+        <div nz-col nzSpan="24">
+          @if(createPlaylist){
+          <quipux-challenge-creator-playlist></quipux-challenge-creator-playlist>
+          }
+          @if(!createPlaylist && playlistSelected != null){
+          <quipux-challenge-details-playlist [details]="detailsList"></quipux-challenge-details-playlist>
+          }
+        </div>
+      </div>
+    </nz-content>
+    <nz-footer>{{'@Mehernandez'}}</nz-footer>
+  </nz-layout>
+</nz-layout>

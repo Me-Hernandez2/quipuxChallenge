@@ -1,0 +1,24 @@
+<ul nz-menu nzTheme="dark" nzMode="inline">
+  <li nz-menu-item nzDisabled >
+    <span nz-icon nzType="user"></span>
+    <span>Kike Hernandez</span>
+  </li>
+  <li nz-submenu nzTitle="Playlists" nzIcon="unordered-list">
+    <ul>
+     @for(playlist of playlistLs; track playlist) {
+      <li nz-menu-item class="list-menu-sections" (click)="details(playlist.nombreLista)">
+        <div nz-row >
+          <div nz-col nzSpan="12" class="menu-section text-center">
+      {{playlist.nombreLista}}
+          </div>
+          <div nz-col nzSpan="12" class="menu-section text-center">
+            <button nz-button nzType="primary" class="delete-button" nzSize="default" nzShape="circle">
+              <span nz-icon nzType="delete" nzTheme="outline"></span>
+            </button>
+          </div>
+        </div>
+      </li>
+      }
+    </ul>
+  </li>
+</ul>
