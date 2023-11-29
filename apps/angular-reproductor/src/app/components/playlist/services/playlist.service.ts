@@ -23,4 +23,8 @@ export class PlaylistService {
         })
       );
   }
+
+  deletePlaylist(nameList: string){
+    return this.http.delete(environments.api_base + 'lists/'+nameList)
+  }
 }

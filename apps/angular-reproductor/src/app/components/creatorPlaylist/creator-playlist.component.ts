@@ -18,13 +18,6 @@ export class CreatorPlaylistComponent {
   fb = inject(NonNullableFormBuilder);
   creatorService$ = inject(CreatorPlaylistService)
   messageService$ = inject(NzMessageService)
-  data = [
-    'Racing car sprays burning fuel into crowd.',
-    'Japanese princess to wed commoner.',
-    'Australian walks 100km after outback crash.',
-    'Man charged over missing wedding girl.',
-    'Los Angeles battles huge wildfires.'
-  ];
   stepCurrent = {step: 0}
   requestPlaylist: RequestPlaylist = {}
 

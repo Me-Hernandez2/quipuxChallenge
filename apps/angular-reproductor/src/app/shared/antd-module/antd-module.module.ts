@@ -35,7 +35,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
     NzNotificationModule,
     NzStepsModule,
     NzListModule,
-    NzTableModule
+    NzTableModule,
   ],
   exports:[
     ReactiveFormsModule,
@@ -52,7 +52,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
     NzNotificationModule,
     NzStepsModule,
     NzListModule,
-    NzTableModule
+    NzTableModule,
   ]
 })
 export class AntdModuleModule {
